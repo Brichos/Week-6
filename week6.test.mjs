@@ -42,3 +42,9 @@ if (test('Duplicates removed', () => {
   const result = intersection([1, 2, 2, 3], [2, 3, 3, 4]);
   assert.deepEqual(result, [2, 3]);
 })) passed++; else failed++;
+
+//String test
+if (test('String arrays', () => {
+  const result = intersection(['a', 'b'], ['b', 'c']);
+  assert.deepEqual(result, ['b']);
+})) passed++; else failed++;
