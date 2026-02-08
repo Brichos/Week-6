@@ -38,5 +38,7 @@ if (test('Empty arrays', () => {
 })) passed++; else failed++;
 
 // Duplicates removed
-assert.deepEqual(intersection([1, 2, 2, 3], [2, 3, 3, 4]), [2, 3]);
-console.log('✓ Duplicates removed');
+if (test('Duplicates removed', () => {
+  const result = intersection([1, 2, 2, 3], [2, 3, 3, 4]);
+  assert.deepEqual(result, [2, 3]);
+})) passed++; else failed++;
