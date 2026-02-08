@@ -117,3 +117,17 @@ if (test('Pipe with many functions', () => {
   const result = transform(1); // (((((1 + 5) * 3) - 2) * 2) ^ 2) = 1024
   assert.equal(result, 1024);
 })) passed++; else failed++;
+
+//Different data types
+if (test('Works with strings', () => {
+  const upper = (s) => s.toUpperCase();
+  const exclaim = (s) => s + '!';
+  const transform = pipe(upper, exclaim);
+  assert.equal(transform('hello'), 'HELLO!');
+})) passed++; else failed++;
+
+console.log(`\n${passed} passed, ${failed} failed\n`);
+
+if (failed > 0) {
+  process.exit(1);
+}
