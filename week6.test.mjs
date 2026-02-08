@@ -134,6 +134,8 @@ if (failed > 0) {
   process.exit(1);
 }
 
+
+
 //Fibonacci Tests
 console.log('Testing Fibonacci Function\n');
 
@@ -158,4 +160,9 @@ if (test('F(3) = 2', () => {
 
 if (test('F(4) = 3', () => {
   assert.equal(fibonacci(4), 3);
+})) passed++; else failed++;
+
+//Larger values
+if (test('F(10) = 55', () => {
+  assert.equal(fibonacci(10), 55);
 })) passed++; else failed++;
