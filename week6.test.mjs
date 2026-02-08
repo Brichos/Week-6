@@ -137,7 +137,12 @@ if (failed > 0) {
 //Fibonacci Tests
 console.log('Testing Fibonacci Function\n');
 
-// Test 1: Base case F(0)
+//Base case F(0)
 if (test('F(0) = 0', () => {
   assert.equal(fibonacci(0), 0);
+})) passed++; else failed++;
+
+//Base case F(1)
+if (test('F(1) = 1', () => {
+  assert.equal(fibonacci(1), 1);
 })) passed++; else failed++;
