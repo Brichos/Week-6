@@ -1,5 +1,7 @@
 import { strict as assert } from 'assert';
-import { intersection } from './week6.mjs';
+import { intersection, pipe } from './week6.mjs';
+
+//Array tests
 
 const test = (description, fn) => {
   try {
@@ -67,3 +69,23 @@ console.log(`\n${passed} passed, ${failed} failed\n`);
 if (failed > 0) {
   process.exit(1);
 }
+
+
+
+//Pipe tests
+
+console.log('Testing Pipe Function');
+
+// Helper functions for testing
+const add5 = (x) => x + 5;
+const multiply3 = (x) => x * 3;
+const subtract2 = (x) => x - 2;
+const double = (x) => x * 2;
+const square = (x) => x * x;
+
+//Basic pipe with two functions
+if (test('Basic pipe with two functions', () => {
+  const addThenMultiply = pipe(add5, multiply3);
+  const result = addThenMultiply(10); // (10 + 5) * 3 = 45
+  assert.equal(result, 45);
+})) passed++; else failed++;
