@@ -89,3 +89,10 @@ if (test('Basic pipe with two functions', () => {
   const result = addThenMultiply(10); // (10 + 5) * 3 = 45
   assert.equal(result, 45);
 })) passed++; else failed++;
+
+//Pipe with three functions
+if (test('Pipe with three functions', () => {
+  const transform = pipe(add5, multiply3, subtract2);
+  const result = transform(10); // ((10 + 5) * 3) - 2 = 43
+  assert.equal(result, 43);
+})) passed++; else failed++;
