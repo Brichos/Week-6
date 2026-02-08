@@ -54,3 +54,16 @@ if (test('Mixed types', () => {
   const result = intersection([1, '2', 3], ['2', 4]);
   assert.deepEqual(result, ['2']);
 })) passed++; else failed++;
+
+//Object refrences
+if (test('Object references', () => {
+  const obj = { id: 1 };
+  const result = intersection([obj, { id: 2 }], [obj]);
+  assert.deepEqual(result, [obj]);
+})) passed++; else failed++;
+
+console.log(`\n${passed} passed, ${failed} failed\n`);
+
+if (failed > 0) {
+  process.exit(1);
+}
