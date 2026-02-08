@@ -103,3 +103,10 @@ if (test('Single function in pipe', () => {
   const result = justDouble(5);
   assert.equal(result, 10);
 })) passed++; else failed++;
+
+//Empty pipe (identity function)
+if (test('Empty pipe returns input unchanged', () => {
+  const identity = pipe();
+  const result = identity(42);
+  assert.equal(result, 42);
+})) passed++; else failed++;
