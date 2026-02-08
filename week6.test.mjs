@@ -59,7 +59,7 @@ if (test('Mixed types', () => {
   assert.deepEqual(result, ['2']);
 })) passed++; else failed++;
 
-//Object refrences
+//Object references
 if (test('Object references', () => {
   const obj = { id: 1 };
   const result = intersection([obj, { id: 2 }], [obj]);
@@ -88,14 +88,14 @@ const square = (x) => x * x;
 //Basic pipe with two functions
 if (test('Basic pipe with two functions', () => {
   const addThenMultiply = pipe(add5, multiply3);
-  const result = addThenMultiply(10); // (10 + 5) * 3 = 45
+  const result = addThenMultiply(10); 
   assert.equal(result, 45);
 })) passed++; else failed++;
 
 //Pipe with three functions
 if (test('Pipe with three functions', () => {
   const transform = pipe(add5, multiply3, subtract2);
-  const result = transform(10); // ((10 + 5) * 3) - 2 = 43
+  const result = transform(10); 
   assert.equal(result, 43);
 })) passed++; else failed++;
 
@@ -116,7 +116,7 @@ if (test('Empty pipe returns input unchanged', () => {
 //Pipe with many functions
 if (test('Pipe with many functions', () => {
   const transform = pipe(add5, multiply3, subtract2, double, square);
-  const result = transform(1); // (((((1 + 5) * 3) - 2) * 2) ^ 2) = 1024
+  const result = transform(1); 
   assert.equal(result, 1024);
 })) passed++; else failed++;
 
@@ -166,3 +166,13 @@ if (test('F(4) = 3', () => {
 if (test('F(10) = 55', () => {
   assert.equal(fibonacci(10), 55);
 })) passed++; else failed++;
+
+if (test('F(15) = 610', () => {
+  assert.equal(fibonacci(15), 610);
+})) passed++; else failed++;
+
+console.log(`\n${passed} passed, ${failed} failed\n`);
+
+if (failed > 0) {
+  process.exit(1);
+}
