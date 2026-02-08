@@ -48,3 +48,9 @@ if (test('String arrays', () => {
   const result = intersection(['a', 'b'], ['b', 'c']);
   assert.deepEqual(result, ['b']);
 })) passed++; else failed++;
+
+//Mixed types
+if (test('Mixed types', () => {
+  const result = intersection([1, '2', 3], ['2', 4]);
+  assert.deepEqual(result, ['2']);
+})) passed++; else failed++;
