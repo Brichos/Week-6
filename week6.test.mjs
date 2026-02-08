@@ -146,3 +146,8 @@ if (test('F(0) = 0', () => {
 if (test('F(1) = 1', () => {
   assert.equal(fibonacci(1), 1);
 })) passed++; else failed++;
+
+//Small values
+if (test('F(2) = 1', () => {
+  assert.equal(fibonacci(2), 1);
+})) passed++; else failed++;
