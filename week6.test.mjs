@@ -25,8 +25,11 @@ if (test('Basic intersection', () => {
 })) passed++; else failed++;
 
 //No common elements
-assert.deepEqual(intersection([1, 2], [3, 4]), []);
-console.log('No common elements');
+if (test('No common elements', () => {
+  const result = intersection([1, 2], [3, 4]);
+  assert.deepEqual(result, []);
+})) passed++; else failed++;
+
 
 // Empty arrays
 assert.deepEqual(intersection([], [1, 2]), []);
