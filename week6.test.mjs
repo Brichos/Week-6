@@ -110,3 +110,10 @@ if (test('Empty pipe returns input unchanged', () => {
   const result = identity(42);
   assert.equal(result, 42);
 })) passed++; else failed++;
+
+//Pipe with many functions
+if (test('Pipe with many functions', () => {
+  const transform = pipe(add5, multiply3, subtract2, double, square);
+  const result = transform(1); // (((((1 + 5) * 3) - 2) * 2) ^ 2) = 1024
+  assert.equal(result, 1024);
+})) passed++; else failed++;
