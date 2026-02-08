@@ -151,3 +151,11 @@ if (test('F(1) = 1', () => {
 if (test('F(2) = 1', () => {
   assert.equal(fibonacci(2), 1);
 })) passed++; else failed++;
+
+if (test('F(3) = 2', () => {
+  assert.equal(fibonacci(3), 2);
+})) passed++; else failed++;
+
+if (test('F(4) = 3', () => {
+  assert.equal(fibonacci(4), 3);
+})) passed++; else failed++;
