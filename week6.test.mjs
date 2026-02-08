@@ -15,3 +15,7 @@ console.log('No common elements');
 assert.deepEqual(intersection([], [1, 2]), []);
 assert.deepEqual(intersection([1, 2], []), []);
 console.log('✓ Empty arrays');
+
+// Duplicates removed
+assert.deepEqual(intersection([1, 2, 2, 3], [2, 3, 3, 4]), [2, 3]);
+console.log('✓ Duplicates removed');
