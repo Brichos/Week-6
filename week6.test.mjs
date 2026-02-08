@@ -1,7 +1,19 @@
-import {strick as assert } from 'assert';
+import { strict as assert } from 'assert';
 import { intersection } from './week6.mjs';
 
-console.log('TEsting Array Intersection')
+const test = (description, fn) => {
+  try {
+    fn();
+    console.log(`✓ ${description}`);
+    return true;
+  } catch (error) {
+    console.log(`✗ ${description}`);
+    console.log(`  ${error.message}`);
+    return false;
+  }
+};
+
+console.log('Testing Array Intersection')
 
 //Basic intersection
 assert.deepEqual(intersection([1, 2, 3,], [2, 3, 4]), [2, 3]);
