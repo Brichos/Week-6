@@ -96,3 +96,10 @@ if (test('Pipe with three functions', () => {
   const result = transform(10); // ((10 + 5) * 3) - 2 = 43
   assert.equal(result, 43);
 })) passed++; else failed++;
+
+//Single function in pipe
+if (test('Single function in pipe', () => {
+  const justDouble = pipe(double);
+  const result = justDouble(5);
+  assert.equal(result, 10);
+})) passed++; else failed++;
