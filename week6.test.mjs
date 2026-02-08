@@ -10,3 +10,8 @@ console.log('Basic intersection');
 //No common elements
 assert.deepEqual(intersection([1, 2], [3, 4]), []);
 console.log('No common elements');
+
+// Empty arrays
+assert.deepEqual(intersection([], [1, 2]), []);
+assert.deepEqual(intersection([1, 2], []), []);
+console.log('✓ Empty arrays');
