@@ -1,8 +1,7 @@
 import { strict as assert } from 'assert';
-import { intersection, pipe } from './week6.mjs';
+import { intersection, pipe, fibonacci } from './week6.mjs';
 
-//Array tests
-
+//Test function
 const test = (description, fn) => {
   try {
     fn();
@@ -15,10 +14,13 @@ const test = (description, fn) => {
   }
 };
 
-console.log('Testing Array Intersection')
-
 let passed = 0;
 let failed = 0;
+
+
+//Array tests
+
+console.log('Testing Array Intersection')
 
 //Basic intersection
 if (test('Basic intersection', () => {
@@ -131,3 +133,11 @@ console.log(`\n${passed} passed, ${failed} failed\n`);
 if (failed > 0) {
   process.exit(1);
 }
+
+//Fibonacci Tests
+console.log('Testing Fibonacci Function\n');
+
+// Test 1: Base case F(0)
+if (test('F(0) = 0', () => {
+  assert.equal(fibonacci(0), 0);
+})) passed++; else failed++;
