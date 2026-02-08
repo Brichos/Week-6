@@ -32,9 +32,10 @@ if (test('No common elements', () => {
 
 
 // Empty arrays
-assert.deepEqual(intersection([], [1, 2]), []);
-assert.deepEqual(intersection([1, 2], []), []);
-console.log('✓ Empty arrays');
+if (test('Empty arrays', () => {
+  assert.deepEqual(intersection([], [1, 2]), []);
+  assert.deepEqual(intersection([1, 2], []), []);
+})) passed++; else failed++;
 
 // Duplicates removed
 assert.deepEqual(intersection([1, 2, 2, 3], [2, 3, 3, 4]), [2, 3]);
